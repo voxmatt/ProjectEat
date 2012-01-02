@@ -1,0 +1,57 @@
+<h1>Listing restaurants</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Blurb</th>
+    <th>Average rating</th>
+    <th>Url</th>
+    <th>Menu url</th>
+    <th>Cost low</th>
+    <th>Cost high</th>
+    <th>Food type</th>
+    <th>Meals</th>
+    <th>Days open</th>
+    <th>Reservations</th>
+    <th>Reservation url</th>
+    <th>Address1</th>
+    <th>Address2</th>
+    <th>City</th>
+    <th>State</th>
+    <th>Zip</th>
+    <th>Phone</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @restaurants.each do |restaurant| %>
+  <tr>
+    <td><%= restaurant.Name %></td>
+    <td><%= restaurant.Blurb %></td>
+    <td><%= restaurant.Average_Rating %></td>
+    <td><%= restaurant.URL %></td>
+    <td><%= restaurant.Menu_URL %></td>
+    <td><%= restaurant.Cost_Low %></td>
+    <td><%= restaurant.Cost_High %></td>
+    <td><%= restaurant.Food_Type %></td>
+    <td><%= restaurant.Meals %></td>
+    <td><%= restaurant.Days_Open %></td>
+    <td><%= restaurant.Reservations %></td>
+    <td><%= restaurant.Reservation_URL %></td>
+    <td><%= restaurant.Address1 %></td>
+    <td><%= restaurant.Address2 %></td>
+    <td><%= restaurant.City %></td>
+    <td><%= restaurant.State %></td>
+    <td><%= restaurant.Zip %></td>
+    <td><%= restaurant.Phone %></td>
+    <td><%= link_to 'Show', restaurant %></td>
+    <td><%= link_to 'Edit', edit_restaurant_path(restaurant) %></td>
+    <td><%= link_to 'Destroy', restaurant, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Restaurant', new_restaurant_path %>

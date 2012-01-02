@@ -1,0 +1,41 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Name: MyString
+  Blurb: MyText
+  Average_Rating: 1
+  URL: MyString
+  Menu_URL: MyString
+  Cost_Low: 1
+  Cost_High: 1
+  Food_Type: MyString
+  Meals: MyString
+  Days_Open: MyString
+  Reservations: MyString
+  Reservation_URL: MyString
+  Address1: MyString
+  Address2: MyString
+  City: MyString
+  State: MyString
+  Zip: 1
+  Phone: MyString
+
+two:
+  Name: MyString
+  Blurb: MyText
+  Average_Rating: 1
+  URL: MyString
+  Menu_URL: MyString
+  Cost_Low: 1
+  Cost_High: 1
+  Food_Type: MyString
+  Meals: MyString
+  Days_Open: MyString
+  Reservations: MyString
+  Reservation_URL: MyString
+  Address1: MyString
+  Address2: MyString
+  City: MyString
+  State: MyString
+  Zip: 1
+  Phone: MyString

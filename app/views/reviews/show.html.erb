@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Publication:</b>
+  <%= @review.Publication %>
+</p>
+
+<p>
+  <b>Restaurant:</b>
+  <%= @review.Restaurant %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%= @review.Author %>
+</p>
+
+<p>
+  <b>Review date:</b>
+  <%= @review.Review_Date %>
+</p>
+
+<p>
+  <b>Rating raw:</b>
+  <%= @review.Rating_Raw %>
+</p>
+
+<p>
+  <b>Rating scale:</b>
+  <%= @review.Rating_Scale %>
+</p>
+
+<p>
+  <b>Rating:</b>
+  <%= @review.Rating %>
+</p>
+
+<p>
+  <b>Review url:</b>
+  <%= @review.Review_URL %>
+</p>
+
+<p>
+  <b>Review quote:</b>
+  <%= @review.Review_Quote %>
+</p>
+
+
+<%= link_to 'Edit', edit_review_path(@review) %> |
+<%= link_to 'Back', reviews_path %>

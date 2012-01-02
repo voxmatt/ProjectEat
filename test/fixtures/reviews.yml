@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  Publication: MyString
+  Restaurant: MyString
+  Author: MyString
+  Review_Date: MyString
+  Rating_Raw: 9.99
+  Rating_Scale: 9.99
+  Rating: 9.99
+  Review_URL: MyString
+  Review_Quote: MyText
+
+two:
+  Publication: MyString
+  Restaurant: MyString
+  Author: MyString
+  Review_Date: MyString
+  Rating_Raw: 9.99
+  Rating_Scale: 9.99
+  Rating: 9.99
+  Review_URL: MyString
+  Review_Quote: MyText

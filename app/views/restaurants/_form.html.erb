@@ -1,0 +1,89 @@
+<%= form_for(@restaurant) do |f| %>
+  <% if @restaurant.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@restaurant.errors.count, "error") %> prohibited this restaurant from being saved:</h2>
+
+      <ul>
+      <% @restaurant.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Name %><br />
+    <%= f.text_field :Name %>
+  </div>
+  <div class="field">
+    <%= f.label :Blurb %><br />
+    <%= f.text_area :Blurb %>
+  </div>
+  <div class="field">
+    <%= f.label :Average_Rating %><br />
+    <%= f.number_field :Average_Rating %>
+  </div>
+  <div class="field">
+    <%= f.label :URL %><br />
+    <%= f.text_field :URL %>
+  </div>
+  <div class="field">
+    <%= f.label :Menu_URL %><br />
+    <%= f.text_field :Menu_URL %>
+  </div>
+  <div class="field">
+    <%= f.label :Cost_Low %><br />
+    <%= f.number_field :Cost_Low %>
+  </div>
+  <div class="field">
+    <%= f.label :Cost_High %><br />
+    <%= f.number_field :Cost_High %>
+  </div>
+  <div class="field">
+    <%= f.label :Food_Type %><br />
+    <%= f.text_field :Food_Type %>
+  </div>
+  <div class="field">
+    <%= f.label :Meals %><br />
+    <%= f.text_field :Meals %>
+  </div>
+  <div class="field">
+    <%= f.label :Days_Open %><br />
+    <%= f.text_field :Days_Open %>
+  </div>
+  <div class="field">
+    <%= f.label :Reservations %><br />
+    <%= f.text_field :Reservations %>
+  </div>
+  <div class="field">
+    <%= f.label :Reservation_URL %><br />
+    <%= f.text_field :Reservation_URL %>
+  </div>
+  <div class="field">
+    <%= f.label :Address1 %><br />
+    <%= f.text_field :Address1 %>
+  </div>
+  <div class="field">
+    <%= f.label :Address2 %><br />
+    <%= f.text_field :Address2 %>
+  </div>
+  <div class="field">
+    <%= f.label :City %><br />
+    <%= f.text_field :City %>
+  </div>
+  <div class="field">
+    <%= f.label :State %><br />
+    <%= f.text_field :State %>
+  </div>
+  <div class="field">
+    <%= f.label :Zip %><br />
+    <%= f.number_field :Zip %>
+  </div>
+  <div class="field">
+    <%= f.label :Phone %><br />
+    <%= f.text_field :Phone %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

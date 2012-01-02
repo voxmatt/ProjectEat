@@ -1,0 +1,95 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @restaurant.Name %>
+</p>
+
+<p>
+  <b>Blurb:</b>
+  <%= @restaurant.Blurb %>
+</p>
+
+<p>
+  <b>Average rating:</b>
+  <%= @restaurant.Average_Rating %>
+</p>
+
+<p>
+  <b>Url:</b>
+  <%= @restaurant.URL %>
+</p>
+
+<p>
+  <b>Menu url:</b>
+  <%= @restaurant.Menu_URL %>
+</p>
+
+<p>
+  <b>Cost low:</b>
+  <%= @restaurant.Cost_Low %>
+</p>
+
+<p>
+  <b>Cost high:</b>
+  <%= @restaurant.Cost_High %>
+</p>
+
+<p>
+  <b>Food type:</b>
+  <%= @restaurant.Food_Type %>
+</p>
+
+<p>
+  <b>Meals:</b>
+  <%= @restaurant.Meals %>
+</p>
+
+<p>
+  <b>Days open:</b>
+  <%= @restaurant.Days_Open %>
+</p>
+
+<p>
+  <b>Reservations:</b>
+  <%= @restaurant.Reservations %>
+</p>
+
+<p>
+  <b>Reservation url:</b>
+  <%= @restaurant.Reservation_URL %>
+</p>
+
+<p>
+  <b>Address1:</b>
+  <%= @restaurant.Address1 %>
+</p>
+
+<p>
+  <b>Address2:</b>
+  <%= @restaurant.Address2 %>
+</p>
+
+<p>
+  <b>City:</b>
+  <%= @restaurant.City %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @restaurant.State %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @restaurant.Zip %>
+</p>
+
+<p>
+  <b>Phone:</b>
+  <%= @restaurant.Phone %>
+</p>
+
+
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
+<%= link_to 'Back', restaurants_path %>
