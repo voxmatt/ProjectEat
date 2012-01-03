@@ -3,6 +3,9 @@ require 'test_helper'
 class RestaurantsControllerTest < ActionController::TestCase
   setup do
     @restaurant = restaurants(:one)
+    @update = {
+      :Name      => 'Lorem Ipsum'
+    }
   end
 
   test "should get index" do
@@ -18,7 +21,7 @@ class RestaurantsControllerTest < ActionController::TestCase
 
   test "should create restaurant" do
     assert_difference('Restaurant.count') do
-      post :create, :restaurant => @restaurant.attributes
+      post :create, :restaurant => @update
     end
 
     assert_redirected_to restaurant_path(assigns(:restaurant))
@@ -35,7 +38,7 @@ class RestaurantsControllerTest < ActionController::TestCase
   end
 
   test "should update restaurant" do
-    put :update, :id => @restaurant.to_param, :restaurant => @restaurant.attributes
+    put :update, :id => @restaurant.to_param, :restaurant => @update
     assert_redirected_to restaurant_path(assigns(:restaurant))
   end
 
