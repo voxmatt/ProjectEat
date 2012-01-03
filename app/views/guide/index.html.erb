@@ -1,0 +1,17 @@
+<% if notice %>
+	<p id "notice">
+		<%= notice %>
+	</p>
+<% end %>
+
+<h1>Project EAT</h1>
+
+<% @restaurants.each do |restaurant| %>
+	<div class="entry">
+		<h3><%= restaurant.Name %></h3>
+		<%= sanitize(restaurant.Blurb) %>
+		<div class="rating_line">
+			<span class="rating"><%= restaurant.Average_Rating %></span>
+		</div>
+	</div>
+<% end %>
