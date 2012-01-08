@@ -1,0 +1,11 @@
+<h2>I have <em>gotta</em> chow here:</h2>
+<ul>
+	<% @list.list_items.each do |item| %>
+	<li><%= item.restaurant.Name %></li>
+	<% end %>
+</ul>
+<p id="notice"><%= notice %></p>
+
+
+<%= link_to 'Edit', edit_list_path(@list) %> |
+<%= link_to 'Back', lists_path %>
