@@ -46,7 +46,7 @@ class ListItemsController < ApplicationController
 
     respond_to do |format|
       if @list_item.save
-        format.html { redirect_to @list_item.list, notice: 'List item added' }
+        format.html { redirect_to(@list_item.list) }
         format.json { render json: @list_item, status: :created, location: @list_item }
       else
         format.html { redirect_to @list_item.list, notice: 'Oops, there was a problem!' }
@@ -78,7 +78,7 @@ class ListItemsController < ApplicationController
     @list_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to list_items_url }
+      format.html { redirect_to list_url(@list_item.list) }
       format.json { head :ok }
     end
   end

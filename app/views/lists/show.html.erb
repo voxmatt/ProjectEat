@@ -1,11 +1,14 @@
-<h2>I have <em>gotta</em> chow here:</h2>
-<ul>
-	<% @list.list_items.each do |item| %>
-	<li><%= item.restaurant.Name %></li>
-	<% end %>
-</ul>
 <p id="notice"><%= notice %></p>
 
+<div class="list_title">I have <em>gotta</em> dine here:</div>
+<table>
+	<% @list.list_items.each do |item| %>
+		<tr>
+			<td><%= item.restaurant.Name %> <%= link_to 'Remove', item, :method => :delete %></td>
+		</tr>
+	<% end %>
+</table>
 
-<%= link_to 'Edit', edit_list_path(@list) %> |
-<%= link_to 'Back', lists_path %>
+<%= button_to 'Clear List', @list, :method => :delete, :confirm => 'Are you sure you want to clear your list?' %>
+
+<%= link_to 'Back', guide_path %>

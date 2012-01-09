@@ -41,9 +41,10 @@ class ListsControllerTest < ActionController::TestCase
 
   test "should destroy list" do
     assert_difference('List.count', -1) do
+      session[:list_id] = @list.id
       delete :destroy, id: @list.to_param
     end
 
-    assert_redirected_to lists_path
+    assert_redirected_to guide_path
   end
 end

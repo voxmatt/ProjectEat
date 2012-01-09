@@ -13,11 +13,16 @@ class ListsController < ApplicationController
   # GET /lists/1
   # GET /lists/1.json
   def show
-    @list = List.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @list }
+    begin    
+      @list = List.find(params[:id])
+    rescue ActiveRecord::RecordNotFound
+      logger.error "Attempt to access invalid list #{params[:id]}"
+      redirect_to guide_url, :notice => 'Invalid List'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @list }
+      end
     end
   end
 
@@ -72,11 +77,12 @@ class ListsController < ApplicationController
   # DELETE /lists/1
   # DELETE /lists/1.json
   def destroy
-    @list = List.find(params[:id])
+    @list = current_list
     @list.destroy
+    session[:list_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to lists_url }
+      format.html { redirect_to(guide_url, :notice => 'Your dine list has been cleared')}
       format.json { head :ok }
     end
   end
