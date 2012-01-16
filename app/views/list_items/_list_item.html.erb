@@ -1,0 +1,7 @@
+<% if list_item == @current_item %>
+	<tr id ="current_item">
+<% else %>
+	<tr>
+<% end %>
+		<td><%= list_item.restaurant.Name %> <%= link_to 'Remove', list_item, :method => :delete, :remote => true %></td>
+	</tr>

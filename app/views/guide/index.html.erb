@@ -12,7 +12,7 @@
 		<%= sanitize(restaurant.Blurb) %>
 		<div class="rating_line">
 			<span class="rating"><%= restaurant.Average_Rating %></span>
-			<%= button_to 'I have to chow here', list_items_path(:restaurant_id => restaurant) %>
+			<%= button_to '+ ToDo Recs', list_items_path(restaurant_id: restaurant), remote: true %>
 		</div>
 	</div>
 <% end %>

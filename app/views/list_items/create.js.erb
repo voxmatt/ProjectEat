@@ -1,0 +1,5 @@
+if ($('#list tr').length == 0) { $('#list').show('blind', 1000); }
+
+$('#list').html("<%=j render @list %>");
+
+$('#current_item').css({'background-color':'#88ff88'}).animate({'background-color':'#fff'}, 1000);

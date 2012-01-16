@@ -20,8 +20,7 @@ class ListItemsControllerTest < ActionController::TestCase
     assert_difference('ListItem.count') do
       post :create, :restaurant_id => restaurants(:one).id
     end
-
-    assert_redirected_to list_path(assigns(:list_item).list)
+    assert_redirected_to guide_path
   end
 
   test "should show list_item" do
@@ -34,16 +33,25 @@ class ListItemsControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should update list_item" do
-    put :update, id: @list_item.to_param, list_item: @list_item.attributes
-    assert_redirected_to list_item_path(assigns(:list_item))
-  end
+#  test "should update list_item" do
+#    assert_difference('ListItem.count') do
+#      put :update, id: @list_item.to_param
+#    end
+#    assert_redirected_to guide_path
+#  end
 
   test "should destroy list_item" do
     assert_difference('ListItem.count', -1) do
       delete :destroy, id: @list_item.to_param
     end
 
-    assert_redirected_to list_items_path
+    assert_redirected_to guide_path
   end
+  
+  test "should create line via ajax" do
+    assert_difference('ListItem.count') do
+      xhr :post, :create, :restaurant_id => restaurants(:one).id
+    end
+  end
+
 end

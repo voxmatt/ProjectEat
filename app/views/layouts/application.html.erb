@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>ProjectEat</title>
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
+	<head>
+	  <title>ProjectEat</title>
+	  <%= stylesheet_link_tag    "application" %>
+	  <%= javascript_include_tag "application" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<% if @list %>
+			<%= hidden_div_if(@list.list_items.empty?, :id => "list") do %>
+				<%= render @list %>
+			<% end %>
+		<% end %>
 
-<%= yield %>
-
-</body>
+		<%= yield %>
+	</body>
 </html>

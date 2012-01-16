@@ -46,7 +46,8 @@ class ListItemsController < ApplicationController
 
     respond_to do |format|
       if @list_item.save
-        format.html { redirect_to(@list_item.list) }
+        format.html { redirect_to guide_url }
+        format.js { @current_item = @list_item }
         format.json { render json: @list_item, status: :created, location: @list_item }
       else
         format.html { redirect_to @list_item.list, notice: 'Oops, there was a problem!' }
@@ -74,11 +75,13 @@ class ListItemsController < ApplicationController
   # DELETE /list_items/1
   # DELETE /list_items/1.json
   def destroy
+    @list = current_list
     @list_item = ListItem.find(params[:id])
     @list_item.destroy
 
     respond_to do |format|
-      format.html { redirect_to list_url(@list_item.list) }
+      format.html { redirect_to(guide_url) }
+      format.js { @current_item = @list_item }
       format.json { head :ok }
     end
   end

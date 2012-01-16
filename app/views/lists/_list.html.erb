@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<div class="list_title">I have <em>gotta</em> dine here:</div>
+<table>
+	<%= render(list.list_items) %>
+</table>
+
+<%= button_to 'Clear List', list, :method => :delete, :confirm => 'Are you sure you want to clear your list?' %>

@@ -82,7 +82,7 @@ class ListsController < ApplicationController
     session[:list_id] = nil
 
     respond_to do |format|
-      format.html { redirect_to(guide_url, :notice => 'Your dine list has been cleared')}
+      format.html { redirect_to(guide_url) }
       format.json { head :ok }
     end
   end
