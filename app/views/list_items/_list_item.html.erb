@@ -3,5 +3,5 @@
 <% else %>
 	<tr>
 <% end %>
-		<td><%= list_item.restaurant.Name %> <%= link_to 'Remove', list_item, :method => :delete, :remote => true %></td>
+		<td><input type="checkbox" name="Restaurant" value="<%= list_item.restaurant.Name %>"> <%= list_item.restaurant.Name %> <%= link_to 'X', list_item, :method => :delete, :remote => true %></input></td>
 	</tr>

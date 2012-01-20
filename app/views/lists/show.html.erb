@@ -4,11 +4,4 @@
 	</p>
 <% end %>
 
-<div class="list_title">
-	To-Do Recs
-</div>
-<table>
-	<%= render(@list.list_items) %>
-</table>
-
-<% button_to 'Clear List', @list, method: delete, confirm: 'Do you really want to clear your list?' %>
+<%= render @list %>

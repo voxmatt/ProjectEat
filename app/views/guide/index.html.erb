@@ -4,15 +4,30 @@
 	</p>
 <% end %>
 
-<h1>Project EAT</h1>
-
-<% @restaurants.each do |restaurant| %>
-	<div class="entry">
-		<h3><%= restaurant.Name %></h3>
-		<%= sanitize(restaurant.Blurb) %>
-		<div class="rating_line">
-			<span class="rating"><%= restaurant.Average_Rating %></span>
-			<%= button_to '+ ToDo Recs', list_items_path(restaurant_id: restaurant), remote: true %>
+<NewRecs>
+	<h1>New Recs</h1>
+	This is where a table of the newest reviews will go.
+</NewRecs>
+				
+<TopRecs>
+	<h1>Top Recs</h1>
+	<% @restaurants.each do |restaurant| %>
+		<div class="entry">
+			<h3><%= restaurant.Name %></h3>
+			<%= sanitize(restaurant.Blurb) %>
+			<div class="rating_line">
+				<span class="rating"><%= Review.average(:rating) %></span>
+				<%= button_to '+ ToDo Recs', list_items_path(restaurant_id: restaurant), remote: true %>
+			</div>
 		</div>
-	</div>
-<% end %>
+	<% end %>
+</TopRecs>
+				
+<ToDoRecs>
+	<h1>To-Do Recs</h1>
+	<% if @list %>
+		<%= hidden_div_if(@list.list_items.empty?, :id => "list") do %>
+			<%= render @list %>
+		<% end %>
+	<% end %>
+</ToDoRecs>

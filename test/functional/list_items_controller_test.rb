@@ -53,5 +53,12 @@ class ListItemsControllerTest < ActionController::TestCase
       xhr :post, :create, :restaurant_id => restaurants(:one).id
     end
   end
+  
+#  test "should create list_item via ajax" do assert_difference('ListItem.count') do
+#      xhr :post, :create, restaurant_id: products(:one).id
+#  end
+#  assert_response :success assert_select_jquery :html, '#list' do
+#    assert_select 'tr#current_item td', /Programming Ruby 1.9/ end
+#  end
 
 end

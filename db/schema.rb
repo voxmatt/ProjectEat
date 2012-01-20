@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120104024822) do
+ActiveRecord::Schema.define(:version => 20120118032412) do
 
   create_table "list_items", :force => true do |t|
     t.integer  "restaurant_id"
@@ -58,6 +58,14 @@ ActiveRecord::Schema.define(:version => 20120104024822) do
     t.decimal  "Rating"
     t.string   "Review_URL"
     t.text     "Review_Quote"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "Restaurant_ID"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "name"
+    t.string   "password_digest"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

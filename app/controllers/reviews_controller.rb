@@ -3,6 +3,7 @@ class ReviewsController < ApplicationController
   # GET /reviews.json
   def index
     @reviews = Review.all
+    @restaurants = Restaurant.find(:all)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,6 +42,7 @@ class ReviewsController < ApplicationController
   # POST /reviews.json
   def create
     @review = Review.new(params[:review])
+    @restaurants = Restaurant.find(:all)
 
     respond_to do |format|
       if @review.save

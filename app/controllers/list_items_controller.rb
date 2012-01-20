@@ -1,4 +1,6 @@
 class ListItemsController < ApplicationController
+  skip_before_filter :authorize
+  
   # GET /list_items
   # GET /list_items.json
   def index

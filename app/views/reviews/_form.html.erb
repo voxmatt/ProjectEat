@@ -17,8 +17,13 @@
   </div>
   <div class="field">
     <%= f.label :Restaurant %><br />
+    <%= f.select(:Restaurant_ID, Restaurant.all.collect {|u| [u.Name,u.id]}, include_blank: true ) %>
+		Or <%= link_to 'Create New Restaurant', new_restaurant_path %>
+  </div>  
+  <!--<div class="field">
+    <%= f.label :Restaurant %><br />
     <%= f.text_field :Restaurant %>
-  </div>
+  </div>-->
   <div class="field">
     <%= f.label :Author %><br />
     <%= f.text_field :Author %>
