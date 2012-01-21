@@ -7,7 +7,7 @@
 
 <p>
   <b>Restaurant:</b>
-  <%= @review.Restaurant %>
+  <%= restaurant_name(@review) %>
 </p>
 
 <p>
@@ -21,18 +21,13 @@
 </p>
 
 <p>
-  <b>Rating raw:</b>
-  <%= @review.Rating_Raw %>
+  <b>Review Rating:</b>
+  <%= @review.Rating_Raw %>/<%= @review.Rating_Scale %>
 </p>
 
 <p>
-  <b>Rating scale:</b>
-  <%= @review.Rating_Scale %>
-</p>
-
-<p>
-  <b>Rating:</b>
-  <%= @review.Rating %>
+  <b>DineRec Rating:</b>
+  <%= @review.Rating.to_i %>
 </p>
 
 <p>

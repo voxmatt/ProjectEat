@@ -4,7 +4,7 @@ class Restaurant < ActiveRecord::Base
 
   #relations
   has_many :list_items
-  has_many :reviews
+  has_many :reviews, dependent: :destroy
   
   # validation
   validates :Name, :presence => true, :uniqueness => true

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120118032412) do
+ActiveRecord::Schema.define(:version => 20120120035516) do
 
   create_table "list_items", :force => true do |t|
     t.integer  "restaurant_id"
@@ -50,7 +50,6 @@ ActiveRecord::Schema.define(:version => 20120118032412) do
 
   create_table "reviews", :force => true do |t|
     t.string   "Publication"
-    t.string   "Restaurant"
     t.string   "Author"
     t.string   "Review_Date"
     t.decimal  "Rating_Raw"
@@ -60,7 +59,7 @@ ActiveRecord::Schema.define(:version => 20120118032412) do
     t.text     "Review_Quote"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "Restaurant_ID"
+    t.integer  "restaurant_id"
   end
 
   create_table "users", :force => true do |t|

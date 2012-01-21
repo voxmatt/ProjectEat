@@ -91,11 +91,11 @@ body{ font:16px/24px "Hero", Helvetica Neue, Helvetica, Arial, sans-serif; }
    =================== */
 
 body {
-	background-image: url(../images/white_paperboard.png);
+	background-image: url(../white_paperboard.png);
 }
    
 #footer-container {
-	background-image: url(../images/paven.png);
+	background-image: url(../paven.png);
 }
 
 #title { 
